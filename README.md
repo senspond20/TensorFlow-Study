@@ -15,6 +15,8 @@ pip install tensorflow
 # Or try the preview build (unstable)
 pip install tf-nightly
 ```
+
+윈도우-> 텐서플로우 : 파이썬 3.5.x 버전만 지원
 > https://bicloud.tistory.com/30
 
 + Anaconda 를 이용한 방법
@@ -26,6 +28,86 @@ https://www.anaconda.com/products/individual/download-success
 conda update conda
 conda install tensorflow
 ```
+
++ ubuntu
+
+```
+sudo apt-get install python3
+sudo apt-get update
+sudo apt-get upgrade python3
+sudo apt-get install python3-pip
+
+
+pip3 install --user --upgrade tensorflow
+```
+
++  주의해야한다. 
+```
+pip3 install pip --upgrade
+```
+```
+Traceback (most recent call last):
+  File "/usr/bin/pip3", line 9, in <module>
+    from pip import main
+ImportError: cannot import name 'main'
+```
+
+pip3 install --upgrade setuptools pip
+
+```
+sudo remove python-pip python3-pip
+wget https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+python3 get-pip.py
+```
+$ python3 -m venv env --without-pip
+$ source ./env/bin/activate
+$ curl https://bootstrap.pypa.io/get-pip.py | python
+
+
+jupyter notebook –-allow-root &
+
+nohup jupyter notebook &
+
+
+https://shwksl101.github.io/gcp/2018/12/23/gcp_vm_custom_setting.html
+
+
+Ipython
+
+In [1]: from IPython.lib import passwd
+In [2]: passwd()
+
+비밀번호 입력
+-> 암호화된 비밀번호
+Out[3] : 'sh1: ------'
+
+jupyter notebook --ip=0.0.0.0 --port=8080 --no-browser
+
+**jupyter notebook --generate-config**
+
+```
+c = get_config()
+#c.NotebookApp.allow_origin = '*'
+
+c.NotebookApp.ip = '0.0.0.0' [instanse ip]
+c.NotebookApp.open_browser = False
+c.NotebookApp.port = 8080
+c.NotebookApp.password = 'sha1:[암호화된 비밀번호]'
+c.NotebookApp.password = [암호화된 비밀번호]
+c.NotebookApp.notebook_dir = [디렉토리]
+```
+
+jupyter notebook --ip=0.0.0.0 --no-browser --port=8888 --allow-root
+
+
+방화벽 해제
+```
+sudo ufw allow 8888
+```
+
+jupyter notebook
+
 
 ## **용어**
 ### **오퍼레이션(Operation)**
