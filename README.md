@@ -15,6 +15,7 @@ pip install tensorflow
 # Or try the preview build (unstable)
 pip install tf-nightly
 ```
+> https://bicloud.tistory.com/30
 
 + Anaconda 를 이용한 방법
 https://www.anaconda.com/products/individual/download-success
